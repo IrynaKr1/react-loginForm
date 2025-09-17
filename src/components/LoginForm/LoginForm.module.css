@@ -1,0 +1,87 @@
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+.formContainer {
+  padding: 20px;
+  box-shadow: 0 0 5px rgb(58, 57, 57);
+  margin: 10px auto;
+  max-width: 500px;
+  min-width: 320px;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.imageWrapper {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+  background-color: rgb(88, 195, 131);
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerImg {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.formHeader {
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.loginForm {
+  display: grid;
+  gap: 1rem;
+}
+
+.label {
+  display: grid;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.inputName {
+  text-transform: uppercase;
+  color: rgb(88, 195, 131);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.input {
+  border-radius: 5px;
+  padding: 10px;
+  border: 0.5px solid gray
+}
+
+.checkboxField {
+  display: flex;
+  gap: 1ch;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  accent-color: rgb(88, 195, 131);
+}
+
+.checkboxText {
+    letter-spacing: -0.5px;
+}
+
+.submitBtn {
+}

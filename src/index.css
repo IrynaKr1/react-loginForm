@@ -3,7 +3,10 @@
 }
 
 body {
-  margin: 25px;
-  padding: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vh;
+  background-color: lightgray;
 }
