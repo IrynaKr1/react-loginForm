@@ -1,3 +1,9 @@
+:root {
+  --main-color: rgb(85, 181, 124);
+  --border-radius: 5px;
+  --border-style: 0.5px solid gray;
+}
+
 input,
 button,
 select,
@@ -26,7 +32,7 @@ textarea {
   width: 100px;
   height: 100px;
   margin-bottom: 8px;
-  background-color: rgb(88, 195, 131);
+  background-color: var(--main-color);
   border-radius: 50%;
   text-align: center;
   display: flex;
@@ -58,15 +64,40 @@ textarea {
 
 .inputName {
   text-transform: uppercase;
-  color: rgb(88, 195, 131);
+  color: var(--main-color);
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 .input {
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   padding: 10px;
-  border: 0.5px solid gray
+  border: var(--border-style);
+}
+
+.passwordContainer {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: var(--border-style);;
+  border-radius: var(--border-radius);
+  padding: 0;
+  position: relative;
+}
+
+.passwordContainer input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+}
+
+.showPassword {
+  border: none;
+  background-color: transparent;
+  color: grey;
+  cursor: pointer;
 }
 
 .checkboxField {
@@ -76,12 +107,28 @@ textarea {
 }
 
 .checkbox {
-  accent-color: rgb(88, 195, 131);
+  accent-color: var(--main-color);
 }
 
 .checkboxText {
-    letter-spacing: -0.5px;
+  letter-spacing: -0.5px;
 }
 
 .submitBtn {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 0.5px solid gray;
+  background-color: var(--main-color);
 }
+
+.signInText {
+    text-align: left;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.signInText a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+

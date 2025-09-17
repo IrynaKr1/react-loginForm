@@ -36,10 +36,12 @@ function LoginFormHtml(props) {
           </label>
           <label className={styles.label}>
             <span className={styles.inputName}>Password</span>
-            <input type='password' name='password' className={styles.input} />
-            <button type='button' className={styles.showPassword}>
-              <img src={eyeIcon} alt='Show password button' />
-            </button>
+            <div className={styles.passwordContainer}>
+              <input type='password' name='password' className={styles.input} />
+              <button type='button' className={styles.showPassword}>
+                <img src={eyeIcon} alt='Show password button' />
+              </button>
+            </div>
           </label>
           <label className={styles.label}>
             <span className={styles.checkboxField}>
@@ -57,7 +59,7 @@ function LoginFormHtml(props) {
             Sign Up
           </button>
         </form>
-        <p>
+        <p className={styles.signInText}>
           I'm already a member!
           <a
             href='https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?hl=en&cp=e30.'
