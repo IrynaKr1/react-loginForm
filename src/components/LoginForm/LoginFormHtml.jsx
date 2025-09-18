@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import smileBeamIcon from './img/smile-beam.png';
 import eyeIcon from './img/eye.png';
+import eyeCrossed from './img/eye-crossed.png';
 import styles from './LoginForm.module.css';
 
 function LoginFormHtml(props) {
@@ -13,6 +14,7 @@ function LoginFormHtml(props) {
     isPasswordValid,
     handleSubmit,
     isPasswordVisible,
+    togglePasswordVisibility,
     email,
     password,
     fullName,
@@ -72,14 +74,14 @@ function LoginFormHtml(props) {
             <span className={styles.inputName}>Password</span>
             <div className={passClassName}>
               <input
-                type='password'
+                type={isPasswordVisible ? 'text' : 'password'}
                 name='password'
                 value={password}
                 className={styles.input}
                 onChange={handlePasswordChange}
               />
-              <button type='button' className={styles.showPassword}>
-                <img src={eyeIcon} alt='Show password button' />
+              <button type='button' className={styles.showPassword} onClick={togglePasswordVisibility}>
+                <img src={isPasswordVisible ? eyeCrossed : eyeIcon} alt='Show password button' />
               </button>
             </div>
           </label>

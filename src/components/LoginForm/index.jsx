@@ -45,6 +45,12 @@ class LoginForm extends Component {
     });
   };
 
+ togglePasswordVisibility = () => {
+  this.setState((prevState) => ({
+    isPasswordVisible: !prevState.isPasswordVisible
+  }));
+};
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({
@@ -74,6 +80,7 @@ class LoginForm extends Component {
           isPasswordValid={isPasswordValid}
           isPasswordVisible={isPasswordVisible}
           handlePasswordChange={this.handlePasswordChange}
+          togglePasswordVisibility={this.togglePasswordVisibility}
           email={email}
           password={password}
           fullName={fullName}
