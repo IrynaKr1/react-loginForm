@@ -11,9 +11,11 @@ function LoginFormHtml(props) {
     handleEmailChange,
     handlePasswordChange,
     isPasswordValid,
+    handleSubmit,
     isPasswordVisible,
     email,
     password,
+    fullName,
   } = props;
 
   const fullnameClassName = classNames(styles.input, {
@@ -42,13 +44,14 @@ function LoginFormHtml(props) {
           />
         </div>
         <h1 className={styles.formHeader}>Create Your Account</h1>
-        <form className={styles.loginForm}>
+        <form className={styles.loginForm} onSubmit={handleSubmit}>
           <label className={styles.label}>
             <span className={styles.inputName}>Full Name</span>
             <input
               type='text'
               name='fullName'
               placeholder='John Doe'
+              value={fullName}
               onChange={handleFullnameChange}
               autoFocus
               className={fullnameClassName}
@@ -59,6 +62,7 @@ function LoginFormHtml(props) {
             <input
               type='email'
               name='email'
+              value={email}
               placeholder='johndoe@gmail.com'
               onChange={handleEmailChange}
               className={emailClassName}
@@ -70,6 +74,7 @@ function LoginFormHtml(props) {
               <input
                 type='password'
                 name='password'
+                value={password}
                 className={styles.input}
                 onChange={handlePasswordChange}
               />

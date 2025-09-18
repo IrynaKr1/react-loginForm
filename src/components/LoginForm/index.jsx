@@ -45,10 +45,20 @@ class LoginForm extends Component {
     });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      email: INITIAL_VALUES.email,
+      fullName: INITIAL_VALUES.fullName,
+      password: INITIAL_VALUES.password,
+    });
+  };
+
   render() {
     const {
       email,
       password,
+      fullName,
       isFullNameValid,
       isEmailValid,
       isPasswordValid,
@@ -66,6 +76,8 @@ class LoginForm extends Component {
           handlePasswordChange={this.handlePasswordChange}
           email={email}
           password={password}
+          fullName={fullName}
+          handleSubmit={this.handleSubmit}
         />
       </>
     );
