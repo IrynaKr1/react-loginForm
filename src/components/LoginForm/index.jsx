@@ -38,6 +38,13 @@ class LoginForm extends Component {
     });
   };
 
+  handlePasswordChange = ({ target: { value } }) => {
+    this.setState({
+      password: value,
+      isPasswordValid: LOGIN_FORM_REG_EXP.password.test(value),
+    });
+  };
+
   render() {
     const {
       email,
@@ -54,6 +61,11 @@ class LoginForm extends Component {
           isFullNameValid={isFullNameValid}
           isEmailValid={isEmailValid}
           handleEmailChange={this.handleEmailChange}
+          isPasswordValid={isPasswordValid}
+          isPasswordVisible={isPasswordVisible}
+          handlePasswordChange={this.handlePasswordChange}
+          email={email}
+          password={password}
         />
       </>
     );

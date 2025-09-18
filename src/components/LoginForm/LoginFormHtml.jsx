@@ -4,7 +4,17 @@ import eyeIcon from './img/eye.png';
 import styles from './LoginForm.module.css';
 
 function LoginFormHtml(props) {
-  const { handleFullnameChange, isFullNameValid, isEmailValid, handleEmailChange } = props;
+  const {
+    handleFullnameChange,
+    isFullNameValid,
+    isEmailValid,
+    handleEmailChange,
+    handlePasswordChange,
+    isPasswordValid,
+    isPasswordVisible,
+    email,
+    password,
+  } = props;
 
   const fullnameClassName = classNames(styles.input, {
     [styles.inputValid]: isFullNameValid,
@@ -14,6 +24,11 @@ function LoginFormHtml(props) {
   const emailClassName = classNames(styles.input, {
     [styles.inputValid]: isEmailValid,
     [styles.inputInvalid]: !isEmailValid,
+  });
+
+  const passClassName = classNames(styles.passwordContainer, {
+    [styles.inputValid]: isPasswordValid,
+    [styles.inputInvalid]: !isPasswordValid,
   });
 
   return (
@@ -51,8 +66,13 @@ function LoginFormHtml(props) {
           </label>
           <label className={styles.label}>
             <span className={styles.inputName}>Password</span>
-            <div className={styles.passwordContainer}>
-              <input type='password' name='password' className={styles.input} />
+            <div className={passClassName}>
+              <input
+                type='password'
+                name='password'
+                className={styles.input}
+                onChange={handlePasswordChange}
+              />
               <button type='button' className={styles.showPassword}>
                 <img src={eyeIcon} alt='Show password button' />
               </button>

@@ -135,8 +135,10 @@ textarea {
 
 .inputValid {
   box-shadow: 0 0 5px green;
+  width: 100%;
 }
 
 .inputInvalid {
   box-shadow: 0 0 5px red;
+  width: 100%;
 }
