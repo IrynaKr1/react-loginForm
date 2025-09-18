@@ -1,8 +1,21 @@
+import classNames from 'classnames';
 import smileBeamIcon from './img/smile-beam.png';
 import eyeIcon from './img/eye.png';
 import styles from './LoginForm.module.css';
 
 function LoginFormHtml(props) {
+  const { handleFullnameChange, isFullNameValid, isEmailValid, handleEmailChange } = props;
+
+  const fullnameClassName = classNames(styles.input, {
+    [styles.inputValid]: isFullNameValid,
+    [styles.inputInvalid]: !isFullNameValid,
+  });
+
+  const emailClassName = classNames(styles.input, {
+    [styles.inputValid]: isEmailValid,
+    [styles.inputInvalid]: !isEmailValid,
+  });
+
   return (
     <>
       <div className={styles.formContainer}>
@@ -21,8 +34,9 @@ function LoginFormHtml(props) {
               type='text'
               name='fullName'
               placeholder='John Doe'
+              onChange={handleFullnameChange}
               autoFocus
-              className={styles.input}
+              className={fullnameClassName}
             />
           </label>
           <label className={styles.label}>
@@ -31,7 +45,8 @@ function LoginFormHtml(props) {
               type='email'
               name='email'
               placeholder='johndoe@gmail.com'
-              className={styles.input}
+              onChange={handleEmailChange}
+              className={emailClassName}
             />
           </label>
           <label className={styles.label}>

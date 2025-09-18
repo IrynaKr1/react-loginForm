@@ -132,3 +132,11 @@ textarea {
     color: var(--main-color);
 }
 
+
+.inputValid {
+  box-shadow: 0 0 5px green;
+}
+
+.inputInvalid {
+  box-shadow: 0 0 5px red;
+}
