@@ -45,11 +45,15 @@ class LoginForm extends Component {
     });
   };
 
- togglePasswordVisibility = () => {
-  this.setState((prevState) => ({
-    isPasswordVisible: !prevState.isPasswordVisible
-  }));
-};
+  togglePasswordVisibility = () => {
+    this.setState((prevState) => ({
+      isPasswordVisible: !prevState.isPasswordVisible,
+    }));
+  };
+
+  handleCheckboxChange = ({ target: { checked } }) => {
+    console.log('Checkbox is:', checked ? 'checked' : 'unchecked');
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -81,6 +85,7 @@ class LoginForm extends Component {
           isPasswordVisible={isPasswordVisible}
           handlePasswordChange={this.handlePasswordChange}
           togglePasswordVisibility={this.togglePasswordVisibility}
+          handleCheckboxChange={this.handleCheckboxChange}
           email={email}
           password={password}
           fullName={fullName}

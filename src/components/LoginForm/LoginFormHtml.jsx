@@ -15,6 +15,7 @@ function LoginFormHtml(props) {
     handleSubmit,
     isPasswordVisible,
     togglePasswordVisibility,
+    handleCheckboxChange,
     email,
     password,
     fullName,
@@ -80,8 +81,15 @@ function LoginFormHtml(props) {
                 className={styles.input}
                 onChange={handlePasswordChange}
               />
-              <button type='button' className={styles.showPassword} onClick={togglePasswordVisibility}>
-                <img src={isPasswordVisible ? eyeCrossed : eyeIcon} alt='Show password button' />
+              <button
+                type='button'
+                className={styles.showPassword}
+                onClick={togglePasswordVisibility}
+              >
+                <img
+                  src={isPasswordVisible ? eyeCrossed : eyeIcon}
+                  alt='Show password button'
+                />
               </button>
             </div>
           </label>
@@ -91,6 +99,7 @@ function LoginFormHtml(props) {
                 type='checkbox'
                 name='termsCheckbox'
                 className={styles.checkbox}
+                onChange={handleCheckboxChange}
               />
               <span className={styles.checkboxText}>
                 I Agree all Statements in Terms od Service
