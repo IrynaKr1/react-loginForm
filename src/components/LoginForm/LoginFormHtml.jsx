@@ -14,6 +14,7 @@ function LoginFormHtml(props) {
       isEmailValid,
       isPasswordValid,
       isPasswordVisible,
+      isAgreed,
     },
     handleFullnameChange,
     handleEmailChange,
@@ -100,6 +101,7 @@ function LoginFormHtml(props) {
               <input
                 type='checkbox'
                 name='termsCheckbox'
+                checked={isAgreed}
                 className={styles.checkbox}
                 onChange={handleCheckboxChange}
               />
@@ -108,7 +110,11 @@ function LoginFormHtml(props) {
               </span>
             </span>
           </label>
-          <button type='submit' className={styles.submitBtn}>
+          <button
+            disabled={!isAgreed}
+            type='submit'
+            className={styles.submitBtn}
+          >
             Sign Up
           </button>
         </form>

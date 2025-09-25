@@ -21,6 +21,7 @@ class LoginForm extends Component {
       isEmailValid: false,
       isPasswordValid: false,
       isPasswordVisible: false,
+      isAgreed: false,
     };
   }
 
@@ -53,6 +54,7 @@ class LoginForm extends Component {
 
   handleCheckboxChange = ({ target: { checked } }) => {
     console.log('Checkbox is:', checked ? 'checked' : 'unchecked');
+    this.setState({ isAgreed: checked });
   };
 
   handleSubmit = (e) => {
