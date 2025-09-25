@@ -6,19 +6,21 @@ import styles from './LoginForm.module.css';
 
 function LoginFormHtml(props) {
   const {
+    formState: {
+      email,
+      password,
+      fullName,
+      isFullNameValid,
+      isEmailValid,
+      isPasswordValid,
+      isPasswordVisible,
+    },
     handleFullnameChange,
-    isFullNameValid,
-    isEmailValid,
     handleEmailChange,
     handlePasswordChange,
-    isPasswordValid,
     handleSubmit,
-    isPasswordVisible,
     togglePasswordVisibility,
     handleCheckboxChange,
-    email,
-    password,
-    fullName,
   } = props;
 
   const fullnameClassName = classNames(styles.input, {

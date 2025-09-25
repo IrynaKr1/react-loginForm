@@ -65,30 +65,15 @@ class LoginForm extends Component {
   };
 
   render() {
-    const {
-      email,
-      password,
-      fullName,
-      isFullNameValid,
-      isEmailValid,
-      isPasswordValid,
-      isPasswordVisible,
-    } = this.state;
     return (
       <>
         <LoginFormHtml
+          formState={this.state}
           handleFullnameChange={this.handleFullnameChange}
-          isFullNameValid={isFullNameValid}
-          isEmailValid={isEmailValid}
           handleEmailChange={this.handleEmailChange}
-          isPasswordValid={isPasswordValid}
-          isPasswordVisible={isPasswordVisible}
           handlePasswordChange={this.handlePasswordChange}
           togglePasswordVisibility={this.togglePasswordVisibility}
           handleCheckboxChange={this.handleCheckboxChange}
-          email={email}
-          password={password}
-          fullName={fullName}
           handleSubmit={this.handleSubmit}
         />
       </>
